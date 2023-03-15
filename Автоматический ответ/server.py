@@ -10,24 +10,32 @@ def index():
     param['title'] = 'Домашняя страница'
     return render_template('index.html', **param)
 
+
 @app.route('/answer')
 @app.route('/auto_answer')
 def answer():
     param = {}
+
+    param['title'] = 'Анкета'
     param['surname'] = "Ученик Яндекс.Лицея"
     param['name'] = "Ученик"
-    param['title'] = 'страница'
+    param['education'] = "Выше среднего"
+    param['profession'] = "Отсутсвует"
+    param['sex'] = "Мужской"
+    param['motivation'] = "Мама сказала"
+    param['ready'] = "Да"
+
     return render_template('auto_answer.html', title1=param['title'], item=param)
+
 
 @app.route('/index/<title>')
 def index1(title):
     return render_template('base.html', title1=title)
 
+
 @app.route('/training/<prof>')
 def training(prof):
     return render_template('training.html', title1='training', prof=prof)
-
-
 
 
 if __name__ == '__main__':

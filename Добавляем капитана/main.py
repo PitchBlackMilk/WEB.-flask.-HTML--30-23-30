@@ -51,6 +51,10 @@ def main():
     user_3.hashed_password = "sci"
 
     db_sess.add(user)
+    db_sess.add(user_1)
+    db_sess.add(user_2)
+    db_sess.add(user_3)
+    db_sess.commit()
 
 
 if __name__ == '__main__':
